@@ -315,7 +315,7 @@ Selected files are parsed locally in the browser and are not uploaded anywhere b
 
 Loaded model data, hydrographs, mappings, search text, phase selection, and sort preference are kept in JavaScript memory for the current page session. The **Reset all** action clears that state.
 
-This project is public. Content is intended for educational and reference use.
+This project is public. Content is intended for education and reference use only.
 ---
 
 ## Important Notes
