@@ -94,7 +94,7 @@ The mapper recognizes these inflow-node types when they are routed to a discover
 
 Connections are associated with a junction by matching the inflow node's `ToDest` `ftGUID` to the junction GUID.
 
-The model summary explicitly identifies discovered junctions and notes that SWC structures are omitted from the junction-row view.
+The model summary reports discovered junctions; SWC structures are omitted from the junction-row view.
 
 ---
 
@@ -138,7 +138,7 @@ For an existing `AreaInflowNode` or `BaseInflNod`, the exporter replaces that el
 
 The new node receives the selected hydrograph's `FlowHyd`. Its label uses the hydrograph title when available, otherwise the prior node label, otherwise `Hydrograph`.
 
-The interface explicitly advises verifying catchment/base-to-hydrograph conversions in InfoDrainage after export.
+Verify catchment/base-to-hydrograph conversions in InfoDrainage after export.
 
 ### Output Filename
 
@@ -181,7 +181,7 @@ The mapping table renders at most:
 2000 junction rows
 ```
 
-If more matching rows exist, the interface warns that the view is capped and recommends refining the search.
+If more matching rows exist, only the first 2,000 are shown. Refine the search to narrow the view.
 
 ---
 
@@ -261,7 +261,7 @@ Each row contains:
 
 ## Getting Started
 
-No package installation or build step is defined in the application. The HTML contains its CSS and JavaScript directly.
+No package installation or build step is required. The standalone HTML file contains its CSS and JavaScript directly.
 
 1. Open the HTML file in a browser.
 2. Choose or drop one InfoDrainage `.iddx` file.
@@ -290,7 +290,7 @@ No package installation or build step is defined in the application. The HTML co
 | GUID generation | `crypto.randomUUID()` with a JavaScript UUID fallback |
 | State | In-memory JavaScript object and `Map` |
 
-The source contains no imported JavaScript framework, package dependency, backend service, or database integration.
+No imported JavaScript framework, package dependency, backend service, or database integration is used.
 
 ---
 
@@ -311,10 +311,11 @@ The embedded CSS includes:
 
 ## Data and Privacy
 
-The application states that selected files are parsed locally in the browser and are not uploaded by the standalone page.
+Selected files are parsed locally in the browser and are not uploaded anywhere by this standalone page.
 
 Loaded model data, hydrographs, mappings, search text, phase selection, and sort preference are kept in JavaScript memory for the current page session. The **Reset all** action clears that state.
 
+This project is public. Content is intended for educational and reference use.
 ---
 
 ## Important Notes
@@ -326,5 +327,5 @@ Loaded model data, hydrographs, mappings, search text, phase selection, and sort
 - Export is disabled until a model is loaded and at least one mapping exists.
 - Auto-match is disabled until the active view contains rows and at least one hydrograph is loaded.
 - Structure routing is preserved through `ToDest ftGUID` in the export logic.
-- The source does not declare a project license.
+- No project license is declared in the HTML file.
 
